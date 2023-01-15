@@ -45,12 +45,25 @@ const pickInfsPokemon = async(pokemon) =>{
 const changeInfsPokemon = async(pokemon) =>{
     const data =await pickInfsPokemon(pokemon)
 
+    
+
     heightPokemon.innerText = "Altura: "+data.height/10+"m"
     weightPokemon.innerText = "Peso: "+data.weight/10+".0kg"
+
     abilitiesPokemon.innerText = "Habilidades: "
     for(let i=0;i<=data.abilities.length-1;i++){
-        if(i )
-        abilitiesPokemon.innerText += " "+data.abilities[i].ability.name+","
+        abilitiesPokemon.innerText += " "+data.abilities[i].ability.name
+
+        if(data.abilities[i].is_hidden == true)
+            abilitiesPokemon.innerText += "(Hidden ability)"
+
+        if(i != data.abilities.length-1)
+            abilitiesPokemon.innerText +=","
+
+        else
+            abilitiesPokemon.innerText +="."
+    
+        
     }
         
 
