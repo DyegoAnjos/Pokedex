@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Pokedex</title>
+</head>
+<body>
+    <header>
+       <form id="form" action="#">
+            <input type="text" placeholder="Nome do Pokémon" id="namePokemon">
+            <button type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form> 
+    </header>
+    <main>
+        <img src="imgs/Pokebola.png" alt="Pokebola" id="pokemon">
+        <div class="infos">
+            <nav id="opcsMenu">
+                <button id="aboutButton" onclick="switchDisplayDiv(1)">Sobre</button>
+                <button id="baseButton" onclick="switchDisplayDiv(2)">Estaus Base</button>
+                <button id="movesButton" onclick="switchDisplayDiv(3)">Movimentos</button>
+            </nav>
+            <div id="divAbout">
+                <div class="types">
+                    <div class="typeCard">
+                        <p class="typeName">Normal</p>
+                    </div>
+                    <div class="typeCard">
+                        <p class="typeName">Normal</p>
+                    </div>
+                </div>
+                <div id="baseInfos">
+                    <h2 id="height">Height: 1.5m</h2>
+                    <h2 id="weight">Weigh: 7.0km</h2>
+                    <h2 id="abilities">Habilidades: oigiygiy, oigiygiy, oigiygiy</h2>
+                </div>
+            </div>
+            <div id="divBase" >
+                <div class="attributeDiv">
+                    <h3 class="attributeName">HP: 72</h3>
+                    <div class="attributeLevel">
+                        <img src="imgs/Bar/barEnd.svg" alt="Bar" class="level full">
+                        <img src="imgs/Bar/barMid.svg" alt="Bar" class="level">
+                        <img src="imgs/Bar/barMid.svg" alt="Bar" class="level">
+                        <img src="imgs/Bar/barMid.svg" alt="Bar" class="level">
+                        <img src="imgs/Bar/barEnd.svg" alt="Bar" class="level">
+                    </div>
+                </div>
+                <div class="attributeDiv">
+                    <h3 class="attributeName">HP: 72</h3>
+                    <div class="attributeLevel">
+                        <img src="imgs/Bar/barEnd.svg" alt="Bar" class="level full">
+                        <img src="imgs/Bar/barMid.svg" alt="Bar" class="level">
+                        <img src="imgs/Bar/barMid.svg" alt="Bar" class="level">
+                        <img src="imgs/Bar/barMid.svg" alt="Bar" class="level">
+                        <img src="imgs/Bar/barEnd.svg" alt="Bar" class="level">
+                    </div>
+                </div>
+                <div class="attributeDiv">
+                    <h3 class="attributeName">HP: 72</h3>
+                    <div class="attributeLevel">
+                        <img src="imgs/Bar/barEnd.svg" alt="Bar" class="level full">
+                        <img src="imgs/Bar/barMid.svg" alt="Bar" class="level">
+                        <img src="imgs/Bar/barMid.svg" alt="Bar" class="level">
+                        <img src="imgs/Bar/barMid.svg" alt="Bar" class="level">
+                        <img src="imgs/Bar/barEnd.svg" alt="Bar" class="level">
+                    </div>
+                </div>
+                <div class="attributeDiv">
+                    <h3 class="attributeName">HP: 72</h3>
+                    <div class="attributeLevel">
+                        <img src="imgs/Bar/barEnd.svg" alt="Bar" class="level full">
+                        <img src="imgs/Bar/barMid.svg" alt="Bar" class="level">
+                        <img src="imgs/Bar/barMid.svg" alt="Bar" class="level">
+                        <img src="imgs/Bar/barMid.svg" alt="Bar" class="level">
+                        <img src="imgs/Bar/barEnd.svg" alt="Bar" class="level">
+                    </div>
+                </div>
+                <div class="attributeDiv">
+                    <h3 class="attributeName">HP: 72</h3>
+                    <div class="attributeLevel">
+                        <img src="imgs/Bar/barEnd.svg" alt="Bar" class="level full">
+                        <img src="imgs/Bar/barMid.svg" alt="Bar" class="level">
+                        <img src="imgs/Bar/barMid.svg" alt="Bar" class="level">
+                        <img src="imgs/Bar/barMid.svg" alt="Bar" class="level">
+                        <img src="imgs/Bar/barEnd.svg" alt="Bar" class="level">
+                    </div>
+                </div>
+                
+            </div>
+            <div id="divMoves" >
+                <div class="moveCard">
+                    <div class="titelMove">
+                            <h3 class="nameMove">Pound</h3>
+                        <div class="typeCard">
+                            <p class="typeName">Normal</p>
+                        </div>
+                    </div>
+                    <div class="infosMove">
+                        <p class="baseMove">PP: 50</p>
+                        <p class="baseMove">Precisão: 100</p>
+                        <p class="baseMove">Poder: 40</p>
+                        <p class="baseMove">Prioridade: 0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/script.js"></script> 
+  <script src="https://kit.fontawesome.com/2d311d7657.js" crossorigin="anonymous"></script>
+</body>
+</html>
