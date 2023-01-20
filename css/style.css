@@ -61,9 +61,13 @@ main{
 }
 
 #pokemon{
-    width: 50%;
+    width: 70%;
     position: absolute;
     bottom: 50%;
+
+    animation-name: breathe;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
 }
 
 .infos{
@@ -143,20 +147,23 @@ main{
     gap: 10px;    
 }
 
+.attributeName{
+    width: 50%;
+    font-size: 1rem;
+}
+
 .attributeLevel{
-    width: 80%;
+    width: 81%;
     height: 50px;
 
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
-.level{
-    width: 10%;
+.level{ 
+    width: 8%;
     margin: 5px;
-    
 }
 
 .full{
@@ -183,6 +190,20 @@ main{
 .animateIn{
     animation-name: slide-right;
     animation-duration: .5s;
+}
+
+@keyframes breathe {
+    0%{
+        transform: scale(100%);
+    }
+
+    50%{
+        transform: scale(110%);
+    }
+
+    100%{
+        transform: scale(100%);
+    }
 }
 
 @keyframes slide-right {
