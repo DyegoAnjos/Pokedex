@@ -11,6 +11,7 @@
     --colorGradient1: #2eeaa8;
     --colorGradient2: #028af2;
     --corlorType: gray;
+    --colorType2: gray;
 }
 
 body{
@@ -117,7 +118,7 @@ main{
 }
 
 .typeCard{
-    background-color: gray;
+    background-color: var(--corlorType);
     border-radius: 20px;
     padding: 10px;
     font-size: 2.5rem;
@@ -179,8 +180,52 @@ main{
 }
 
 
+
+
 #divMoves{
+    height: 350px;
     display: none;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    justify-content: center;
+
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.moveCard{
+    width: 180px;
+    border: 2px solid var(--corlorType);
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nameMove{
+    max-width: 150px;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 5px;
+}
+
+.titelMove .typeCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titelMove .typeName{
+    font-size: 1rem;
+}
+
+.infosMove{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .hide{

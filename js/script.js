@@ -5,16 +5,7 @@ const divAbout = document.getElementById("divAbout")
 const divBase = document.getElementById("divBase")
 const divMoves = document.getElementById("divMoves")
 
-const imgPokemon =document.querySelector("#pokemon")
-
-const divTypes = document.querySelectorAll("#divAbout .types")
-const heightPokemon = document.getElementById("height")
-const weightPokemon = document.getElementById("weight")
-const abilitiesPokemon = document.getElementById("abilities")
-
-
-const attributeNameArray = document.querySelectorAll(".attributeName")
-const levelIcon = document.querySelectorAll(".level")
+const imgPokemon = document.querySelector("#pokemon")
 
 
 function switchDisplayDiv(id){
@@ -47,53 +38,6 @@ const pickInfsPokemon = async(pokemon) =>{
     return data
 }
 
-const aboutSwitch = (data) =>{
-    for(let i=0;i<=data.types.length-1;i++){
-        const typeCardCreat = document.createElement("div")
-        typeCardCreat.setAttribute("class", "typeCard")
-
-        divTypes[0].appendChild(typeCardCreat)
-
-        const typeCard=document.querySelectorAll("#divAbout .types .typeCard")
-        
-        const typeNameCreat =document.createElement("p")
-        typeNameCreat.setAttribute("class", "typeName")
-
-        typeNameCreat.innerText = data.types[i].type.name
-
-        typeCard[i].appendChild(typeNameCreat)
-    }
-
-    heightPokemon.innerText = "Altura: "+data.height/10+"m"
-    weightPokemon.innerText = "Peso: "+data.weight/10+".0kg"
-
-    abilitiesPokemon.innerText = "Habilidades: "
-    for(let i=0;i<=data.abilities.length-1;i++){
-        abilitiesPokemon.innerText += " "+data.abilities[i].ability.name
-
-        if(data.abilities[i].is_hidden == true)
-            abilitiesPokemon.innerText += "(Hidden ability)"
-
-        if(i != data.abilities.length-1)
-            abilitiesPokemon.innerText +=","
-
-        else
-            abilitiesPokemon.innerText +="."
-    
-        
-    }
-}
-
-const baseSwitch = (data) =>{
-    for(let i=0; i<=data.stats.length-1;i++){
-        attributeNameArray[i].innerText += data.stats[i].base_stat
-
-        for(let j=0;j<Math.round(data.stats[i].base_stat/10) && j<10;j++){
-            levelIcon[j+i*10].classList.add("full")
-        }
-    }
-}
-
 const changeInfsPokemon = async(pokemon) =>{
     const data =await pickInfsPokemon(pokemon)
 
@@ -101,6 +45,7 @@ const changeInfsPokemon = async(pokemon) =>{
 
     aboutSwitch(data)
     baseSwitch(data)
+    movesSwitch(data)
 }
 
 boxForm.addEventListener("submit", (e) => {
@@ -109,3 +54,78 @@ boxForm.addEventListener("submit", (e) => {
 
     changeInfsPokemon(namePokemon)
 })
+
+const typesColors = [
+    {
+        name: "poison",
+        color: "#9454cc"
+    },
+    {
+        name: "psychic",
+        color: "#e96c8a"
+    },
+    {
+        name: "steal",
+        color: "#6cacc8"
+    },
+    {
+        name: "rock",
+        color: "#ada57e"
+    },
+    {
+        name: "normal",
+        color: "#828284"
+    },
+    {
+        name: "fairy",
+        color: "#e38ce3"
+    },
+    {
+        name: "ice",
+        color: "#47c9cb"
+    },
+    {
+        name: "dark",
+        color: "#4f4647"
+    },
+    {
+        name: "ground",
+        color: "#a6733c"
+    },
+    {
+        name: "dragon",
+        color: "#596ebd"
+    },
+    {
+        name: "water",
+        color: "#309ae4"
+    },
+    {
+        name: "ghost",
+        color: "#6f4769"
+    },
+    {
+        name: "electric",
+        color: "#e1bd2a"
+    },
+    {
+        name: "fly",
+        color: "#73abd2"
+    },
+    {
+        name: "bug",
+        color: "#a09f28"
+    },
+    {
+        name: "fighting",
+        color: "#e69020"
+    },
+    {
+        name: "grass",
+        color: "#449838"
+    },
+    {
+        name: "fire",
+        color: "#e7603e"
+    },
+]
