@@ -1,2 +1,4 @@
 # Pokedex
  
+ Ajustar 
+o responsivo

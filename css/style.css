@@ -16,7 +16,6 @@
 
 body{
     height: 100vh;
-    width: 100vw;
     background: linear-gradient(360deg, var(--colorGradient1) 40%, var(--colorGradient2) 100%);
 
     display: flex;
@@ -27,17 +26,19 @@ body{
 
 form{
     height: 100px;
+
     display: flex;
     align-items: center;
 }
 
-input, form button{
+input, button{
     border: none;
 }
 
 input{
     height: 35px;
     width: 250px;
+
     border-radius: 100px 0px 0px 100px;
 
     text-align: center;
@@ -53,6 +54,7 @@ form button{
 main{
     height: 500px;
     width: 100%;
+
     background-color: #ffffff;
     border-radius: 50px 50px 0px 0px;
 
@@ -61,8 +63,9 @@ main{
     align-items: center;
 }
 
-#pokemon{
-    width: 70%;
+#pokemonImg{
+    width: 60%;
+
     position: absolute;
     bottom: 50%;
 
@@ -92,7 +95,6 @@ main{
 
 #opcsMenu button{
     background: none;
-    border: none;
 
     font-size: 1rem;
     font-weight: 700;
@@ -102,13 +104,15 @@ main{
     border-bottom: 1px solid #000;
 }
 
-#divAbout{
+#divAbout, #divBase, #divMoves{
+    display: none;
     width: 100%;
-    padding: 2rem;
+}
 
-    display: flex;
+#divAbout{
     flex-direction: column;
     align-items: center;
+    padding: 2rem;
     gap: 5rem;
 }
 
@@ -129,12 +133,9 @@ main{
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-    text-align: center;
 }
 
 #divBase{
-    width: 100%;
-
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -145,7 +146,7 @@ main{
 .attributeDiv{
     display: flex;
     align-items: center;
-    gap: 10px;    
+    gap: 10px; 
 }
 
 .attributeName{
@@ -179,12 +180,9 @@ main{
     rotate: 180deg;
 }
 
-
-
-
 #divMoves{
     height: 350px;
-    display: none;
+
     flex-wrap: wrap;
     gap: 10px;
     padding: 20px;

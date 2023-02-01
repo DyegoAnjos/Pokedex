@@ -5,7 +5,7 @@ const divAbout = document.getElementById("divAbout")
 const divBase = document.getElementById("divBase")
 const divMoves = document.getElementById("divMoves")
 
-const imgPokemon = document.querySelector("#pokemon")
+const imgPokemon = document.querySelector("#pokemonImg")
 
 
 function switchDisplayDiv(id){
