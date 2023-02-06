@@ -43,7 +43,7 @@ const changeInfsPokemon = async(pokemon) =>{
     const data =await pickInfsPokemon(pokemon)
 
     imgPokemon.setAttribute("src", data.sprites.other.home.front_default)
-
+    
     aboutSwitch(data)
     baseSwitch(data)
     contMoves=movesSwitch(data,contMoves)

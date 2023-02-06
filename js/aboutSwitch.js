@@ -2,30 +2,24 @@ const divTypes = document.querySelectorAll("#divAbout .types")
 const heightPokemon = document.getElementById("height")
 const weightPokemon = document.getElementById("weight")
 const abilitiesPokemon = document.getElementById("abilities")
+const typeCard=document.querySelectorAll("#divAbout .types .typeCard")
+const typeName=document.querySelectorAll("#divAbout .types .typeCard .typeName")
 
 const aboutSwitch = (data) =>{
+    for(let i=0;i<=typeCard.length-1;i++)
+    typeCard[i].style.visibility="hidden"
+    
     for(let i=0;i<=data.types.length-1;i++){
-        const typeCardCreat = document.createElement("div")
-        typeCardCreat.setAttribute("class", "typeCard")
-        
-        
-        divTypes[0].appendChild(typeCardCreat)
-
-
-        const typeCard=document.querySelectorAll("#divAbout .types .typeCard")
+        typeCard[i].style.visibility="visible"
 
         for(let j=0;j<=typesColors.length-1;j++){
             if(data.types[i].type.name === typesColors[j].name)
-                typeCardCreat.style.backgroundColor=typesColors[j].color
+                typeCard[i].style.backgroundColor=typesColors[j].color
         }
 
-        const typeNameCreat =document.createElement("p")
-        typeNameCreat.setAttribute("class", "typeName")
 
-        typeNameCreat.innerText = data.types[i].type.name.substr(0).toUpperCase()
+        typeName[i].innerText = data.types[i].type.name.substr(0).toUpperCase()
         
-
-        typeCard[i].appendChild(typeNameCreat)
         
     }
 

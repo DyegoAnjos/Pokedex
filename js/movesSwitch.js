@@ -33,6 +33,7 @@ const movesSwitch = async(data,contMoves) =>{
                 divTypeMoveAppend[i].style.backgroundColor=typesColors[j].color 
         }
         
+        
         const typeName = document.createElement("p")
         typeName.classList.add("typeName")
         typeName.innerText = dataMove.type.name

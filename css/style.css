@@ -64,6 +64,7 @@ main{
 }
 
 #pokemonImg{
+    min-width: 300px;
     width: 30%;
 
     position: absolute;
@@ -130,6 +131,7 @@ main{
     font-size: 2rem;
     font-weight: 700;
     text-align: center;
+    visibility: hidden;
 }
 
 #baseInfos{
@@ -220,6 +222,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    visibility: visible;
 }
 
 .titelMove .typeName{
@@ -265,7 +268,7 @@ main{
     }
   }
 
-@media (max-width: 460px){
+@media (max-width: 560px){
     body{
         align-items: center;
     }
