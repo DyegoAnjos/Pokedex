@@ -1,16 +1,12 @@
-// const divMoves = document.getElementById("divMoves")
-
-
 const picskInfsMoves = async(move) =>{
 
     const resMove = await fetch(move)
     const dataMove = await resMove.json()
-    console.log(dataMove)
     return dataMove
 }
 
-const movesSwitch = async(data) =>{
-    for(let i=0; i<=data.moves.length-1;i++){
+const movesSwitch = async(data,contMoves) =>{
+    for(let i=contMoves; i<=data.moves.length-1;i++){
         const dataMove= await picskInfsMoves(data.moves[i].move.url)
 
         const moveCard=document.createElement("div")
@@ -49,7 +45,15 @@ const movesSwitch = async(data) =>{
 
         const classMove= document.createElement("p")
         classMove.classList.add("classMove")
-        classMove.innerText += "Classe: "+dataMove.damage_class.name
+        if(dataMove.damage_class.name == "physical")
+            classMove.innerText += "Classe: Físico"
+        
+        else if (dataMove.damage_class.name == "special")
+            classMove.innerText += "Classe: Especial"
+        
+        else
+            classMove.innerText += "Classe: "+dataMove.damage_class.name
+            
         divInfosMoveAppend[i].appendChild(classMove)
 
         const powerMove = document.createElement("p")
@@ -70,10 +74,7 @@ const movesSwitch = async(data) =>{
         const priorityMove = document.createElement("p")
         priorityMove.classList.add("priorityMove")
         priorityMove.innerText = "Prioridade: "+dataMove.priority
-        divInfosMoveAppend[i].appendChild(priorityMove)
-
-        
-
-        
+        divInfosMoveAppend[i].appendChild(priorityMove)   
     }
+    return contMoves
 }

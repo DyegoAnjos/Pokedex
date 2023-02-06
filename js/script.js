@@ -7,6 +7,8 @@ const divMoves = document.getElementById("divMoves")
 
 const imgPokemon = document.querySelector("#pokemonImg")
 
+var contCreat=0
+var contMoves=0
 
 function switchDisplayDiv(id){
     divAbout.style.display = "none"
@@ -34,7 +36,6 @@ const pickInfsPokemon = async(pokemon) =>{
 
     const res = await fetch(apiUrl)
     const data =  await res.json()
-    console.log(data)
     return data
 }
 
@@ -45,7 +46,7 @@ const changeInfsPokemon = async(pokemon) =>{
 
     aboutSwitch(data)
     baseSwitch(data)
-    movesSwitch(data)
+    contMoves=movesSwitch(data,contMoves)
 }
 
 boxForm.addEventListener("submit", (e) => {
@@ -53,6 +54,7 @@ boxForm.addEventListener("submit", (e) => {
     const namePokemon = inputNamePokemon.value.substr(0).toLowerCase()
 
     changeInfsPokemon(namePokemon)
+    contCreat++
 })
 
 const typesColors = [
@@ -109,7 +111,7 @@ const typesColors = [
         color: "#e1bd2a"
     },
     {
-        name: "fly",
+        name: "flying",
         color: "#73abd2"
     },
     {
