@@ -6,6 +6,8 @@ const picskInfsMoves = async(move) =>{
 }
 
 const movesSwitch = async(data,contMoves) =>{
+    
+
     for(let i=contMoves; i<=data.moves.length-1;i++){
         const dataMove= await picskInfsMoves(data.moves[i].move.url)
 
@@ -77,5 +79,6 @@ const movesSwitch = async(data,contMoves) =>{
         priorityMove.innerText = "Prioridade: "+dataMove.priority
         divInfosMoveAppend[i].appendChild(priorityMove)   
     }
+
     return contMoves
 }
