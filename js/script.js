@@ -8,7 +8,6 @@ const divMoves = document.getElementById("divMoves")
 const imgPokemon = document.querySelector("#pokemonImg")
 
 var contCreat=0
-var contMoves=0
 
 function switchDisplayDiv(id){
     divAbout.style.display = "none"
@@ -46,7 +45,7 @@ const changeInfsPokemon = async(pokemon) =>{
     
     aboutSwitch(data)
     baseSwitch(data)
-    contMoves=movesSwitch(data,contMoves)
+    movesSwitch(data)
 }
 
 boxForm.addEventListener("submit", (e) => {

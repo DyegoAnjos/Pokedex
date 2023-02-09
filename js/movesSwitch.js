@@ -5,10 +5,21 @@ const picskInfsMoves = async(move) =>{
     return dataMove
 }
 
-const movesSwitch = async(data,contMoves) =>{
-    
+var contMoves=0
+var i=0
 
-    for(let i=contMoves; i<=data.moves.length-1;i++){
+const movesSwitch = async(data) =>{
+    if(contMoves != 0){
+        const moveCardAppend2 = document.querySelectorAll(".titelMove")
+        while(contMoves>0){
+            moveCardAppend2[i].parentNode.remove()
+            contMoves--
+            i++
+        }
+    
+    }
+
+    for(let i=0;i<=data.moves.length-1;i++){
         const dataMove= await picskInfsMoves(data.moves[i].move.url)
 
         const moveCard=document.createElement("div")
@@ -78,7 +89,7 @@ const movesSwitch = async(data,contMoves) =>{
         priorityMove.classList.add("priorityMove")
         priorityMove.innerText = "Prioridade: "+dataMove.priority
         divInfosMoveAppend[i].appendChild(priorityMove)   
-    }
 
-    return contMoves
+        contMoves=contMoves+1
+    }    
 }
