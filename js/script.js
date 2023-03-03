@@ -7,6 +7,8 @@ const divMoves = document.getElementById("divMoves")
 
 const imgPokemon = document.querySelector("#pokemonImg")
 
+const errorElemente = document.querySelector("#erro")
+
 var contCreat=0
 
 function switchDisplayDiv(id){
@@ -30,27 +32,39 @@ function switchDisplayDiv(id){
     }
 }
 
+
 const pickInfsPokemon = async(pokemon) =>{
     const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemon}`
 
+    
     const res = await fetch(apiUrl)
     const data =  await res.json()
+    
     return data
 }
 
 const changeInfsPokemon = async(pokemon) =>{
     const data =await pickInfsPokemon(pokemon)
 
-    imgPokemon.setAttribute("src", data.sprites.other.home.front_default)
+    errorElemente.style.visibility="hidden"
+
+    if(data.previous === null){
+        errorElemente.style.visibility="visible"
+        errorElemente.classList.add("animateErrorIn")
+    }
+
+    else{
+        imgPokemon.setAttribute("src", data.sprites.other.home.front_default)
     
-    aboutSwitch(data)
-    baseSwitch(data)
-    movesSwitch(data)
+        aboutSwitch(data)
+        baseSwitch(data)
+        movesSwitch(data)
+    }
 }
 
 boxForm.addEventListener("submit", (e) => {
     e.preventDefault()
-    const namePokemon = inputNamePokemon.value.substr(0).toLowerCase()
+    const namePokemon = inputNamePokemon.value.toLowerCase()
 
     changeInfsPokemon(namePokemon)
     contCreat++

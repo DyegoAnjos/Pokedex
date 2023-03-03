@@ -15,6 +15,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Seleção Pessoal do pokemon
 - [x] Responsividade
 - [ ] Evoluções
+- [ ] Pesquisa de movimentos no pokemon
 - [ ] Tela dos movimentos
 
 ## 💻 Habilidades no Projeto

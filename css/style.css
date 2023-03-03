@@ -11,7 +11,6 @@
     --colorGradient1: #2eeaa8;
     --colorGradient2: #028af2;
     --corlorType: gray;
-    --colorType2: gray;
 }
 
 body{
@@ -23,12 +22,17 @@ body{
     justify-content: space-between;
 }
 
-form{
-    height: 100px;
-
+header{
+    width: 20%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 3rem;
+}
+
+form{
+    display: flex;
+    align-items: center;
 }
 
 input, button{
@@ -42,6 +46,7 @@ input{
     border-radius: 100px 0px 0px 100px;
 
     text-align: center;
+    z-index: 1;
 }
 
 form button{
@@ -49,10 +54,20 @@ form button{
     width: 40px;
     
     border-radius: 0px 100px 100px 0px;
+    z-index: 1;
+}
+
+#erro{
+    visibility: hidden;
+    background-color: red;
+    color: #ffffff;
+    font-size: 1rem;
+    border-radius: 0px 0px 100px 100px;
+    padding: 10px;
 }
 
 main{
-    height: 350px;
+    height: 500px;
     width: 100%;
 
     background-color: #ffffff;
@@ -65,10 +80,10 @@ main{
 
 #pokemonImg{
     min-width: 300px;
-    width: 30%;
+    width: 26%;
 
     position: absolute;
-    bottom: 40%;
+    bottom: 50%;
 
     animation-name: breathe;
     animation-duration: 5s;
@@ -108,6 +123,7 @@ main{
 #divAbout, #divBase, #divMoves{
     display: none;
     width: 100%;
+    height: 350px;
 }
 
 #divAbout{
@@ -176,10 +192,6 @@ main{
     margin: 5px;
 }
 
-.full{
-    background-color: var(--corlorType);
-}
-
 .level:first-child,.level:last-child{
     border-radius: 100px 0px 0px 100px;
 }
@@ -189,8 +201,6 @@ main{
 }
 
 #divMoves{
-    height: 210px;
-
     flex-wrap: wrap;
     gap: 10px;
     padding: 20px;
@@ -243,6 +253,10 @@ main{
     animation-duration: .5s;
 }
 
+.animateErrorIn{
+    animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
 @keyframes breathe {
     0%{
         transform: scale(100%);
@@ -265,6 +279,15 @@ main{
     100% {
         transform: translateX(0);
         opacity: 100%;
+    }
+}
+
+@keyframes slide-bottom {
+    0% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
     }
   }
 

@@ -8,15 +8,15 @@ const picskInfsMoves = async(move) =>{
 var contMoves=0
 var i=0
 
+
+
+
 const movesSwitch = async(data) =>{
-    if(contMoves != 0){
-        const moveCardAppend2 = document.querySelectorAll(".titelMove")
-        while(contMoves>0){
-            moveCardAppend2[i].parentNode.remove()
-            contMoves--
-            i++
-        }
-    
+    if(contMoves > 0){
+        const moveCard = document.querySelectorAll(".moveCard")
+        for(let i=0;i<=contMoves-1;i++)
+            moveCard[i].remove()
+        contMoves=0
     }
 
     for(let i=0;i<=data.moves.length-1;i++){
@@ -49,7 +49,7 @@ const movesSwitch = async(data) =>{
         
         const typeName = document.createElement("p")
         typeName.classList.add("typeName")
-        typeName.innerText = dataMove.type.name
+        typeName.innerText = dataMove.type.name.toUpperCase()
         divTypeMoveAppend[i].appendChild(typeName)
 
         const divInfosMove = document.createElement("div")
