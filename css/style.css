@@ -10,11 +10,12 @@
 
     --colorGradient1: #2eeaa8;
     --colorGradient2: #028af2;
-    --corlorType: gray;
+    --corlorType: #808080;
 }
 
 body{
     height: 100vh;
+    width: 100vw;
     background: linear-gradient(360deg, var(--colorGradient1) 40%, var(--colorGradient2) 100%);
 
     display: flex;
@@ -24,6 +25,7 @@ body{
 
 header{
     width: 20%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,13 +59,15 @@ form button{
     z-index: 1;
 }
 
-#erro{
-    visibility: hidden;
+#erro{  
     background-color: red;
     color: #ffffff;
+
     font-size: 1rem;
     border-radius: 0px 0px 100px 100px;
     padding: 10px;
+
+    visibility: hidden;
 }
 
 main{
@@ -79,8 +83,8 @@ main{
 }
 
 #pokemonImg{
-    min-width: 300px;
-    width: 26%;
+    max-width: 500px;
+    width: 20%;
 
     position: absolute;
     bottom: 50%;
@@ -291,7 +295,7 @@ main{
     }
   }
 
-@media (max-width: 560px){
+@media (max-width: 400px){
     body{
         align-items: center;
     }
@@ -305,8 +309,13 @@ main{
     }
 
     #pokemonImg{
-        width: 60%;
-        bottom: 50%;
+        width: 150px;
+
+        bottom: 60%;
+    }
+
+    #opcsMenu button{
+        font-size: 1rem;
     }
 
     #divAbout{
@@ -323,6 +332,10 @@ main{
 
     #divAbout,#baseInfos,#divBase{
         flex-direction: column;
+    }
+
+    #baseInfos{
+        font-size: 0.5rem;
     }
 
     #divBase{
